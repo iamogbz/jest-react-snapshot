@@ -3,6 +3,7 @@
         "baseUrl": "./src",
         "moduleResolution": "node",
         "outDir": "./built",
+        "paths": { "*": ["*", "./@types/*"] },
         "target": "es6",
         "allowSyntheticDefaultImports": true,
         "jsx": "react",
@@ -10,5 +11,5 @@
         "noFallthroughCasesInSwitch": true,
         "noImplicitAny": true
     },
-    "exclude": ["node_modules"]
+    "exclude": ["lib", "node_modules"]
 }

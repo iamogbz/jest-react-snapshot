@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import * as React from "react";
 import styled from "styled-components";
 
 export const UglyButton = styled.button`
@@ -17,7 +17,7 @@ export const UglyButtonA = ({
     height?: number;
     width?: number;
     className?: string;
-}): ReactElement => {
+}): React.ReactElement => {
     const style = {
         height: `${height}px`,
         width: `${width}px`,
@@ -36,7 +36,7 @@ const ButtonGroup = styled.div`
     justify-content: space-inbetween;
 `;
 
-export const UglyButtons = (): ReactElement => (
+export const UglyButtons = (): React.ReactElement => (
     <ButtonGroup>
         <UglyButtonA />
         <UglyButtonB />
