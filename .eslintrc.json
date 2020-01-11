@@ -20,7 +20,9 @@
         }
     },
     "globals": {
-        "browser": false
+        "page": true,
+        "browser": true,
+        "jestPuppeteer": true
     },
     "rules": {
         "arrow-parens": [2, "as-needed"],

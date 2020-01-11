@@ -1,24 +1,26 @@
 {
-    "name": "boilerplate",
+    "name": "jest-react-snapshot",
     "version": "0.0.1",
-    "description": "NodeJS Boilerplate with precommit test and linting configured",
+    "description": "Snapshot react components as images in jest tests",
     "author": "iamogbz",
     "repository": {
         "type": "git",
-        "url": "https://github.com/iamogbz/node-js-boilerplate"
+        "url": "https://github.com/iamogbz/jest-react-snapshot"
     },
     "bugs": {
-        "url": "https://github.com/iamogbz/node-js-boilerplate/issues"
+        "url": "https://github.com/iamogbz/jest-react-snapshot/issues"
     },
-    "homepage": "https://github.com/iamogbz/node-js-boilerplate#readme",
+    "homepage": "https://github.com/iamogbz/jest-react-snapshot#readme",
     "license": "GPL-3.0",
     "keywords": [
+        "jest",
+        "react",
+        "snapshot",
+        "image",
         "node",
         "nodejs",
         "typescript",
-        "boilerplate",
         "testing",
-        "linting",
         "ci",
         "package",
         "npm"
@@ -27,33 +29,37 @@
         "node": ">=8",
         "npm": ">=6"
     },
-    "main": "index.js",
+    "main": "main.js",
+    "types": "main.d.ts",
     "scripts": {
         "lint": "eslint . --ext .js,.ts",
         "build": "webpack --mode=production",
         "build-watch": "webpack --mode=development --watch",
         "test": "jest",
+        "test-watch": "jest --watch",
         "coveralls": "cat ./artifacts/coverage/lcov.info | coveralls",
         "typecheck": "tsc --noEmit",
         "commit": "git-cz",
         "release": "semantic-release"
     },
     "release": {
-        "dryRun": true,
         "plugins": [
             "@semantic-release/commit-analyzer",
             "@semantic-release/release-notes-generator",
-            "@semantic-release/npm",
+            ["@semantic-release/npm", { "pkgRoot": "./lib" }],
             "@semantic-release/github"
         ]
     },
     "jest": {
-        "preset": "ts-jest",
+        "preset": "jest-puppeteer",
         "moduleDirectories": [
             "./src",
             "./tests",
             "./node_modules"
         ],
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
         "testPathIgnorePatterns": [
             "./artifacts/",
             "./node_modules/"
@@ -89,8 +95,15 @@
         "@commitlint/cli": "^8.3.4",
         "@commitlint/config-conventional": "^8.3.4",
         "@commitlint/travis-cli": "^8.3.4",
+        "@types/copy-webpack-plugin": "^5.0.0",
         "@types/jest": "^24.0.25",
+        "@types/jest-environment-puppeteer": "^4.3.1",
+        "@types/jest-image-snapshot": "^2.11.1",
         "@types/node": "^13.1.6",
+        "@types/puppeteer": "^2.0.0",
+        "@types/react": "^16.9.17",
+        "@types/react-dom": "^16.9.4",
+        "@types/styled-components": "^4.4.2",
         "@types/webpack": "^4.41.2",
         "@typescript-eslint/eslint-plugin": "^2.15.0",
         "@typescript-eslint/parser": "^2.15.0",
@@ -99,6 +112,7 @@
         "babel-loader": "^8.0.6",
         "babel-plugin-transform-class-properties": "^6.24.1",
         "commitizen": "^4.0.3",
+        "copy-webpack-plugin": "^5.1.1",
         "coveralls": "^3.0.9",
         "cz-conventional-changelog": "^3.0.2",
         "eslint": "^6.8.0",
@@ -110,11 +124,15 @@
         "eslint-plugin-react": "^7.17.0",
         "husky": "^4.0.3",
         "jest": "^24.9.0",
+        "jest-puppeteer": "^4.4.0",
         "lint-staged": "^9.5.0",
         "prettier": "^1.19.1",
         "prettier-eslint": "^9.0.1",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
         "rxjs": "^6.5.4",
         "semantic-release": "^15.14.0",
+        "styled-components": "^4.4.1",
         "stylelint": "^12.0.1",
         "stylelint-config-standard": "^19.0.0",
         "stylelint-config-styled-components": "^0.1.1",
@@ -124,5 +142,13 @@
         "typescript": "^3.4.5",
         "webpack": "^4.41.5",
         "webpack-cli": "^3.3.10"
+    },
+    "dependencies": {
+        "jest-image-snapshot": "^2.11.1",
+        "puppeteer": "^2.0.0"
+    },
+    "peerDependencies": {
+        "jest": ">=20 <=24",
+        "jest-puppeteer": "^4.0.0"
     }
 }
