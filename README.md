@@ -9,16 +9,63 @@
 
 > Snapshot react components as images in jest tests
 
-## Shell Commands
+## Usage
 
-```sh
-npm run test      # run jest tests
+```typescript
+import { imageToMatchSnapshot } from "jest-react-snapshot";
+
+expect.extend({ imageToMatchSnapshot });
+
+it("renders component matching snapshot", async (): Promise<void> => {
+    await expect(<Component {...props} />).imageToMatchSnapshot();
+});
 ```
 
-```sh
-npm run commit    # run commitizen
+See [repo test](./tests/index.test.tsx) for more details.
+
+### Advanced Usage
+
+Uses [`jest-image-snapshot`](https://github.com/americanexpress/jest-image-snapshot) to power the image snapshot and diffing functionality.
+
+Supports the `toMatchImageSnapshot` [API](https://github.com/americanexpress/jest-image-snapshot#%EF%B8%8F-api), providing some default configuration.
+
+```typescript
+const defaultOptions: MatchImageSnapshotOptions = {
+    blur: 2,
+    customDiffConfig: { threshold: 0.5 },
+    failureThreshold: 0.05,
+    failureThresholdType: "percent",
+};
 ```
 
-```sh
-npm run build     # webpack build
+```typescript
+await expect(<Component {...props} />).imageToMatchSnapshot(customOptions);
 ```
+
+### Test Environment Setup
+
+Easiest way is to use [`jest-puppeeter`](https://github.com/smooth-code/jest-puppeteer) which provides sensible defaults for your testing environment.
+
+#### Example Jest Config
+
+```json
+    "jest": {
+        "preset": "jest-puppeteer",
+        "moduleDirectories": [
+            "./src",
+            "./tests",
+            "./node_modules"
+        ],
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "testPathIgnorePatterns": [
+            "./artifacts/",
+            "./node_modules/"
+        ]
+    }
+```
+
+## Further Work
+
+- Replace `puppeteer` with lighter renderer as only the `HTML` and `CSS` layout engine is used.
