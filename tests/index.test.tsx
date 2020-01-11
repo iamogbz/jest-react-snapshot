@@ -22,6 +22,7 @@ describe("imageToMatchSnapshot", (): void => {
     it.each(testCases)(
         "renders component as image and matches snapshot",
         async (Component: React.ReactType, props): Promise<void> => {
+            await page.setViewport({ width: 200, height: 200 });
             await expect(<Component {...props} />).imageToMatchSnapshot();
         },
     );
