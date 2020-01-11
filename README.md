@@ -1,11 +1,13 @@
-# NodeJS Boilerplate
+# Jest React Snapshot
 
-[![Dependabot badge](https://badgen.net/dependabot/iamogbz/node-js-boilerplate/?icon=dependabot)](https://app.dependabot.com)
-[![Dependencies](https://david-dm.org/iamogbz/node-js-boilerplate.svg)](https://github.com/iamogbz/node-js-boilerplate)
-[![Build Status](https://github.com/iamogbz/node-js-boilerplate/workflows/Build/badge.svg)](https://github.com/iamogbz/node-js-boilerplate/actions)
-[![Coverage Status](https://coveralls.io/repos/github/iamogbz/node-js-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/iamogbz/node-js-boilerplate?branch=master)
+![LOGO](./assets/logo.png)
 
-Simple node js package with linting, testing and building preconfigured
+[![Dependabot badge](https://badgen.net/dependabot/iamogbz/jest-react-snapshot/?icon=dependabot)](https://app.dependabot.com)
+[![Dependencies](https://david-dm.org/iamogbz/jest-react-snapshot.svg)](https://github.com/iamogbz/jest-react-snapshot)
+[![Build Status](https://github.com/iamogbz/jest-react-snapshot/workflows/Build/badge.svg)](https://github.com/iamogbz/jest-react-snapshot/actions)
+[![Coverage Status](https://coveralls.io/repos/github/iamogbz/jest-react-snapshot/badge.svg?branch=master)](https://coveralls.io/github/iamogbz/jest-react-snapshot?branch=master)
+
+Snapshot react components as images in jest tests
 
 ## Shell Commands
 

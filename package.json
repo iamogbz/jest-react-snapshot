@@ -1,24 +1,26 @@
 {
-    "name": "boilerplate",
+    "name": "jest-react-snapshot",
     "version": "0.0.1",
-    "description": "NodeJS Boilerplate with precommit test and linting configured",
+    "description": "Snapshot react components as images in jest tests",
     "author": "iamogbz",
     "repository": {
         "type": "git",
-        "url": "https://github.com/iamogbz/node-js-boilerplate"
+        "url": "https://github.com/iamogbz/jest-react-snapshot"
     },
     "bugs": {
-        "url": "https://github.com/iamogbz/node-js-boilerplate/issues"
+        "url": "https://github.com/iamogbz/jest-react-snapshot/issues"
     },
-    "homepage": "https://github.com/iamogbz/node-js-boilerplate#readme",
+    "homepage": "https://github.com/iamogbz/jest-react-snapshot#readme",
     "license": "GPL-3.0",
     "keywords": [
+        "jest",
+        "react",
+        "snapshot",
+        "image",
         "node",
         "nodejs",
         "typescript",
-        "boilerplate",
         "testing",
-        "linting",
         "ci",
         "package",
         "npm"
