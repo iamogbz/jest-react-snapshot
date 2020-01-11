@@ -2,8 +2,9 @@
     "compilerOptions": {
         "baseUrl": "./src",
         "moduleResolution": "node",
+        "declaration": true,
         "outDir": "./built",
-        "paths": { "*": ["*", "./@types/*"] },
+        "paths": { "*": ["*", "src/@types/*"] },
         "target": "es6",
         "allowSyntheticDefaultImports": true,
         "jsx": "react",

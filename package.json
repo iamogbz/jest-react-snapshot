@@ -29,7 +29,8 @@
         "node": ">=8",
         "npm": ">=6"
     },
-    "main": "index.js",
+    "main": "main.js",
+    "types": "main.d.ts",
     "scripts": {
         "lint": "eslint . --ext .js,.ts",
         "build": "webpack --mode=production",
@@ -42,11 +43,10 @@
         "release": "semantic-release"
     },
     "release": {
-        "dryRun": true,
         "plugins": [
             "@semantic-release/commit-analyzer",
             "@semantic-release/release-notes-generator",
-            "@semantic-release/npm",
+            ["@semantic-release/npm", { "pkgRoot": "./lib" }],
             "@semantic-release/github"
         ]
     },
@@ -95,6 +95,7 @@
         "@commitlint/cli": "^8.3.4",
         "@commitlint/config-conventional": "^8.3.4",
         "@commitlint/travis-cli": "^8.3.4",
+        "@types/copy-webpack-plugin": "^5.0.0",
         "@types/jest": "^24.0.25",
         "@types/jest-environment-puppeteer": "^4.3.1",
         "@types/jest-image-snapshot": "^2.11.1",
@@ -111,6 +112,7 @@
         "babel-loader": "^8.0.6",
         "babel-plugin-transform-class-properties": "^6.24.1",
         "commitizen": "^4.0.3",
+        "copy-webpack-plugin": "^5.1.1",
         "coveralls": "^3.0.9",
         "cz-conventional-changelog": "^3.0.2",
         "eslint": "^6.8.0",
