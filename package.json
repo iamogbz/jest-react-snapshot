@@ -90,12 +90,11 @@
         "@commitlint/cli": "^8.3.4",
         "@commitlint/config-conventional": "^8.3.4",
         "@commitlint/travis-cli": "^8.3.4",
-        "@types/enzyme": "^3.10.4",
-        "@types/enzyme-adapter-react-16": "^1.0.5",
         "@types/jest": "^24.0.25",
         "@types/jest-image-snapshot": "^2.11.1",
         "@types/node": "^13.1.6",
         "@types/react": "^16.9.17",
+        "@types/react-dom": "^16.9.4",
         "@types/styled-components": "^4.4.2",
         "@types/webpack": "^4.41.2",
         "@typescript-eslint/eslint-plugin": "^2.15.0",
@@ -107,8 +106,6 @@
         "commitizen": "^4.0.3",
         "coveralls": "^3.0.9",
         "cz-conventional-changelog": "^3.0.2",
-        "enzyme": "^3.11.0",
-        "enzyme-adapter-react-16": "^1.15.2",
         "eslint": "^6.8.0",
         "eslint-config-airbnb": "^18.0.1",
         "eslint-config-prettier": "^6.9.0",
@@ -140,7 +137,6 @@
         "jest-image-snapshot": "^2.11.1"
     },
     "peerDependencies": {
-        "enzyme": "^3.0.0",
         "jest": ">=20 <=24"
     }
 }
