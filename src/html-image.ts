@@ -1,12 +1,11 @@
-export const htmlImage = ({
+export const htmlImage = async ({
     html,
     styleTags,
 }: {
     html?: string;
     styleTags?: string;
-}): Buffer => {
-    // TODO: implement html rendering
-    // eslint-disable-next-line no-console
-    console.log(html, styleTags);
-    return new Buffer([]);
+}): Promise<string> => {
+    const styledHtml = `<html><head><style>${styleTags}</style></head><body>${html}</body></html>`;
+    await page.setContent(styledHtml);
+    return page.screenshot();
 };

@@ -9,6 +9,6 @@ export async function imageToMatchSnapshot(
     recieved: React.ReactElement,
     options: MatchImageSnapshotOptions,
 ): Promise<jest.CustomMatcherResult> {
-    const image = htmlImage(styledHtml(recieved));
+    const image = await htmlImage(styledHtml(recieved));
     return configureToMatchImageSnapshot(options).bind(this)(image);
 }

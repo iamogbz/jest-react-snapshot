@@ -49,12 +49,15 @@
         ]
     },
     "jest": {
-        "preset": "ts-jest",
+        "preset": "jest-puppeteer",
         "moduleDirectories": [
             "./src",
             "./tests",
             "./node_modules"
         ],
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
         "testPathIgnorePatterns": [
             "./artifacts/",
             "./node_modules/"
@@ -91,8 +94,10 @@
         "@commitlint/config-conventional": "^8.3.4",
         "@commitlint/travis-cli": "^8.3.4",
         "@types/jest": "^24.0.25",
+        "@types/jest-environment-puppeteer": "^4.3.1",
         "@types/jest-image-snapshot": "^2.11.1",
         "@types/node": "^13.1.6",
+        "@types/puppeteer": "^2.0.0",
         "@types/react": "^16.9.17",
         "@types/react-dom": "^16.9.4",
         "@types/styled-components": "^4.4.2",
@@ -115,6 +120,7 @@
         "eslint-plugin-react": "^7.17.0",
         "husky": "^4.0.3",
         "jest": "^24.9.0",
+        "jest-puppeteer": "^4.4.0",
         "lint-staged": "^9.5.0",
         "prettier": "^1.19.1",
         "prettier-eslint": "^9.0.1",
@@ -134,9 +140,11 @@
         "webpack-cli": "^3.3.10"
     },
     "dependencies": {
-        "jest-image-snapshot": "^2.11.1"
+        "jest-image-snapshot": "^2.11.1",
+        "puppeteer": "^2.0.0"
     },
     "peerDependencies": {
-        "jest": ">=20 <=24"
+        "jest": ">=20 <=24",
+        "jest-puppeteer": "^4.0.0"
     }
 }

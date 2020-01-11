@@ -1,6 +1,3 @@
-/**
- * @jest-environment node
- */
 import * as React from "react";
 
 import { imageToMatchSnapshot } from "../src";
@@ -11,6 +8,10 @@ import {
 } from "./__mocks__/reactComponents";
 
 expect.extend({ imageToMatchSnapshot });
+
+beforeEach(async () => {
+    await jestPuppeteer.resetPage();
+});
 
 describe("imageToMatchSnapshot", (): void => {
     const testCases = [

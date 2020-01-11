@@ -5,7 +5,7 @@ export const UglyButton = styled.button`
     color: red;
     background-color: blue;
     text-align: center;
-    display: flex;
+    display: inline-flex;
     justify-items: center;
 `;
 
@@ -13,16 +13,22 @@ export const UglyButtonA = ({
     height = 40,
     width = 80,
     className,
+    children,
 }: {
     height?: number;
     width?: number;
     className?: string;
+    children?: React.ReactNode;
 }): React.ReactElement => {
     const style = {
         height: `${height}px`,
         width: `${width}px`,
     };
-    return <UglyButton style={style} className={className}></UglyButton>;
+    return (
+        <UglyButton style={style} className={className}>
+            {children}
+        </UglyButton>
+    );
 };
 
 export const UglyButtonB = styled(UglyButtonA)`
@@ -38,7 +44,7 @@ const ButtonGroup = styled.div`
 
 export const UglyButtons = (): React.ReactElement => (
     <ButtonGroup>
-        <UglyButtonA />
-        <UglyButtonB />
+        <UglyButtonA>Button A</UglyButtonA>
+        <UglyButtonB>Button B</UglyButtonB>
     </ButtonGroup>
 );
