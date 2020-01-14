@@ -35,6 +35,7 @@
         "lint": "eslint . --ext .js,.ts",
         "build": "webpack --mode=production",
         "build-watch": "webpack --mode=development --watch",
+        "start": "styleguidist server",
         "test": "jest",
         "test-watch": "jest --watch",
         "coveralls": "cat ./artifacts/coverage/lcov.info | coveralls",
@@ -46,7 +47,12 @@
         "plugins": [
             "@semantic-release/commit-analyzer",
             "@semantic-release/release-notes-generator",
-            ["@semantic-release/npm", { "pkgRoot": "./lib" }],
+            [
+                "@semantic-release/npm",
+                {
+                    "pkgRoot": "./lib"
+                }
+            ],
             "@semantic-release/github"
         ]
     },
@@ -130,6 +136,7 @@
         "prettier-eslint": "^9.0.1",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
+        "react-styleguidist": "^10.6.0",
         "rxjs": "^6.5.4",
         "semantic-release": "^16.0.1",
         "styled-components": "^4.4.1",
