@@ -12,14 +12,13 @@ beforeEach(async () => {
 });
 
 describe("imageToMatchSnapshot", (): void => {
-  const testCases = [
+  it.each([
     [Burger, {}],
     [Polaroid, {}],
     [SingleDivElements, {}],
-  ];
-  it.each(testCases)(
+  ])(
     "renders component as image and matches snapshot",
-    async (Component: React.ElementType, props): Promise<void> => {
+    async (Component, props): Promise<void> => {
       await expect(<Component {...props} />).imageToMatchSnapshot({
         viewportSizePx: { height: 512, width: 1536 },
       });

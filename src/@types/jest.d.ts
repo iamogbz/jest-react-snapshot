@@ -1,4 +1,4 @@
-import { ImageMatchSnapshotOptions } from "index";
+import { ImageMatchSnapshotOptions } from "..";
 
 declare global {
   namespace jest {
