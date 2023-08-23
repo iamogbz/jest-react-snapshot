@@ -32,7 +32,7 @@ const configuration: Configuration = {
     }),
   ],
   output: {
-    filename: "main.js",
+    filename: "index.js",
     libraryTarget: "commonjs",
     path: path.resolve(__dirname, "lib"),
   },

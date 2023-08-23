@@ -29,8 +29,8 @@
     "node": ">=8",
     "npm": ">=6"
   },
-  "main": "main.js",
-  "types": "main.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "rm -rf lib && tsc --project tsconfig.prod.json --emitDeclarationOnly --declaration && webpack --mode=production",
