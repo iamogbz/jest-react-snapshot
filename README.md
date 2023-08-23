@@ -5,7 +5,7 @@
 [![Dependabot badge](https://badgen.net/dependabot/iamogbz/jest-react-snapshot/?icon=dependabot)](https://app.dependabot.com)
 [![Dependencies](https://david-dm.org/iamogbz/jest-react-snapshot.svg)](https://github.com/iamogbz/jest-react-snapshot)
 [![Build Status](https://github.com/iamogbz/jest-react-snapshot/workflows/Build/badge.svg)](https://github.com/iamogbz/jest-react-snapshot/actions)
-[![Coverage Status](https://coveralls.io/repos/github/iamogbz/jest-react-snapshot/badge.svg?branch=refs/heads/master)](https://coveralls.io/github/iamogbz/jest-react-snapshot?branch=refs/heads/master)
+[![Coverage Status](https://coveralls.io/repos/github/iamogbz/jest-react-snapshot/badge.svg?branch=refs/heads/main)](https://coveralls.io/github/iamogbz/jest-react-snapshot?branch=refs/heads/main)
 [![NPM Version](https://img.shields.io/npm/v/jest-react-snapshot.svg)](https://www.npmjs.com/package/jest-react-snapshot)
 
 > Snapshot react components as images in jest tests
