@@ -2,11 +2,9 @@
 import { MatchImageSnapshotOptions } from "jest-image-snapshot";
 
 declare global {
-    namespace jest {
-        interface Matchers<R, T> {
-            imageToMatchSnapshot(
-                options?: MatchImageSnapshotOptions,
-            ): Promise<R>;
-        }
+  namespace jest {
+    interface Matchers<R> {
+      imageToMatchSnapshot(options?: MatchImageSnapshotOptions): Promise<R>;
     }
+  }
 }
