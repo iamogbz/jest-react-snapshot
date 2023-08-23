@@ -24,20 +24,13 @@ it("renders component matching snapshot", async (): Promise<void> => {
 
 See [repo test](./tests/index.test.tsx) for more details.
 
+![image-to-match-snapshot](tests/__image_snapshots__/index-test-tsx-image-to-match-snapshot-renders-component-as-image-and-matches-snapshot-3-snap.png)
+
 ### Advanced Usage
 
 Uses [`jest-image-snapshot`](https://github.com/americanexpress/jest-image-snapshot) to power the image snapshot and diffing functionality.
 
 Supports the `toMatchImageSnapshot` [API](https://github.com/americanexpress/jest-image-snapshot#%EF%B8%8F-api), providing some default configuration.
-
-```typescript
-const defaultOptions: MatchImageSnapshotOptions = {
-    blur: 2,
-    customDiffConfig: { threshold: 0.5 },
-    failureThreshold: 0.05,
-    failureThresholdType: "percent",
-};
-```
 
 ```typescript
 await expect(<Component {...props} />).imageToMatchSnapshot(customOptions);

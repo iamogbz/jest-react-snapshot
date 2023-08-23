@@ -11,7 +11,7 @@ export type ImageMatchSnapshotOptions = MatchImageSnapshotOptions & {
 
 const defaultOptions: ImageMatchSnapshotOptions = {
   blur: 2,
-  customDiffConfig: { threshold: 0.5 },
+  customDiffConfig: { threshold: 0.05 },
   failureThreshold: 0.05,
   failureThresholdType: "percent",
   viewportSizePx: { height: 1024, width: 1024 },
