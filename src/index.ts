@@ -1,24 +1,33 @@
 import {
-    configureToMatchImageSnapshot,
-    MatchImageSnapshotOptions,
+  configureToMatchImageSnapshot,
+  MatchImageSnapshotOptions,
 } from "jest-image-snapshot";
 import { styledHtml } from "./react-html";
 import { htmlImage } from "./html-image";
 
-const defaultOptions: MatchImageSnapshotOptions = {
-    blur: 2,
-    customDiffConfig: { threshold: 0.5 },
-    failureThreshold: 0.05,
-    failureThresholdType: "percent",
+export type ImageMatchSnapshotOptions = MatchImageSnapshotOptions & {
+  viewportSizePx?: { height: number; width: number };
+};
+
+const defaultOptions: ImageMatchSnapshotOptions = {
+  blur: 2,
+  customDiffConfig: { threshold: 0.05 },
+  failureThreshold: 0.05,
+  failureThresholdType: "percent",
+  viewportSizePx: { height: 1024, width: 1024 },
 };
 
 export async function imageToMatchSnapshot(
-    recieved: React.ReactElement,
-    options: MatchImageSnapshotOptions = {},
+  recieved: React.ReactElement,
+  options: ImageMatchSnapshotOptions = {},
 ): Promise<jest.CustomMatcherResult> {
-    const image = await htmlImage(styledHtml(recieved));
-    return configureToMatchImageSnapshot({
-        ...defaultOptions,
-        ...options,
-    }).bind(this)(image);
+  const { viewportSizePx, ...matchImageSnapshotOptions } = {
+    ...defaultOptions,
+    ...options,
+  };
+  await page.setViewport(viewportSizePx);
+  const image = await htmlImage(styledHtml(recieved));
+  return configureToMatchImageSnapshot(matchImageSnapshotOptions).bind(this)(
+    image,
+  );
 }
