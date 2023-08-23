@@ -3,7 +3,7 @@
 <span><img alt="logo" align="right" width="144" height="144" src="./assets/logo.png"/></span>
 
 [![Build Status](https://github.com/iamogbz/jest-react-snapshot/workflows/Build/badge.svg)](https://github.com/iamogbz/jest-react-snapshot/actions)
-[![Coverage Status](https://coveralls.io/repos/github/iamogbz/jest-react-snapshot/badge.svg?branch=refs/heads/main)](https://coveralls.io/github/iamogbz/jest-react-snapshot?branch=refs/heads/main)
+[![Coverage Status](https://coveralls.io/repos/github/iamogbz/jest-react-snapshot/badge.svg?branch=refs/heads/master)](https://coveralls.io/github/iamogbz/jest-react-snapshot?branch=refs/heads/main)
 [![NPM Version](https://img.shields.io/npm/v/jest-react-snapshot.svg)](https://www.npmjs.com/package/jest-react-snapshot)
 
 > Snapshot react components as images in jest tests
@@ -22,7 +22,7 @@ it("renders component matching snapshot", async (): Promise<void> => {
 
 See [repo test](./tests/index.test.tsx) for more details.
 
-![image-to-match-snapshot](tests/__image_snapshots__/index-test-tsx-image-to-match-snapshot-renders-component-as-image-and-matches-snapshot-3-snap.png)
+![image-to-match-snapshot](https://raw.githubusercontent.com/iamogbz/jest-react-snapshot/main/tests/__image_snapshots__/index-test-tsx-image-to-match-snapshot-renders-component-as-image-and-matches-snapshot-3-snap.png)
 
 ### Advanced Usage
 
