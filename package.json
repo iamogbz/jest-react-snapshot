@@ -144,9 +144,8 @@
     "webpack-node-externals": "^3.0.0"
   },
   "peerDependencies": {
-    "jest": ">=28",
-    "jest-image-snapshot": ">=3",
-    "jest-puppeteer": ">=7",
+    "jest": ">=29",
+    "jest-image-snapshot": ">=6",
     "puppeteer": ">=21"
   }
 }
