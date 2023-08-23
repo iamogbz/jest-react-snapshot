@@ -29,8 +29,11 @@
     "node": ">=8",
     "npm": ">=6"
   },
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+      "lib"
+  ],
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "rm -rf lib && tsc --project tsconfig.prod.json --emitDeclarationOnly --declaration && webpack --mode=production",
@@ -60,12 +63,7 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "./lib"
-        }
-      ],
+      "@semantic-release/npm",
       "@semantic-release/github"
     ]
   },
