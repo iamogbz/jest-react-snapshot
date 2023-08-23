@@ -1,11 +1,9 @@
 import * as React from "react";
 
 import { imageToMatchSnapshot } from "../src";
-import {
-  UglyButtonA,
-  UglyButtonB,
-  UglyButtons,
-} from "./__mocks__/reactComponents";
+import { SingleDivElements } from "./__mocks__/reactComponents";
+import { Burger } from "./__mocks__/Burger";
+import { Polaroid } from "./__mocks__/Polaroid";
 
 expect.extend({ imageToMatchSnapshot });
 
@@ -15,15 +13,16 @@ beforeEach(async () => {
 
 describe("imageToMatchSnapshot", (): void => {
   const testCases = [
-    [UglyButtonA, {}],
-    [UglyButtonB, {}],
-    [UglyButtons, {}],
+    [Burger, {}],
+    [Polaroid, {}],
+    [SingleDivElements, {}],
   ];
   it.each(testCases)(
     "renders component as image and matches snapshot",
     async (Component: React.ElementType, props): Promise<void> => {
-      await page.setViewport({ width: 200, height: 200 });
-      await expect(<Component {...props} />).imageToMatchSnapshot();
+      await expect(<Component {...props} />).imageToMatchSnapshot({
+        viewportSizePx: { height: 512, width: 1536 },
+      });
     },
   );
 });

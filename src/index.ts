@@ -5,20 +5,29 @@ import {
 import { styledHtml } from "./react-html";
 import { htmlImage } from "./html-image";
 
-const defaultOptions: MatchImageSnapshotOptions = {
+export type ImageMatchSnapshotOptions = MatchImageSnapshotOptions & {
+  viewportSizePx?: { height: number; width: number };
+};
+
+const defaultOptions: ImageMatchSnapshotOptions = {
   blur: 2,
   customDiffConfig: { threshold: 0.5 },
   failureThreshold: 0.05,
   failureThresholdType: "percent",
+  viewportSizePx: { height: 1024, width: 1024 },
 };
 
 export async function imageToMatchSnapshot(
   recieved: React.ReactElement,
-  options: MatchImageSnapshotOptions = {},
+  options: ImageMatchSnapshotOptions = {},
 ): Promise<jest.CustomMatcherResult> {
-  const image = await htmlImage(styledHtml(recieved));
-  return configureToMatchImageSnapshot({
+  const { viewportSizePx, ...matchImageSnapshotOptions } = {
     ...defaultOptions,
     ...options,
-  }).bind(this)(image);
+  };
+  await page.setViewport(viewportSizePx);
+  const image = await htmlImage(styledHtml(recieved));
+  return configureToMatchImageSnapshot(matchImageSnapshotOptions).bind(this)(
+    image,
+  );
 }

@@ -24,8 +24,6 @@ module.exports = {
     jestPuppeteer: true,
   },
   rules: {
-    "arrow-parens": ["error", "as-needed"],
-    "arrow-body-style": ["error", "as-needed"],
     "class-methods-use-this": "off",
     "no-console": "warn",
     "no-param-reassign": ["error", { props: false }],
